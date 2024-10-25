@@ -28,7 +28,7 @@
 
 <h1>Realizar un Pedido</h1>
 
-<form id="pedidoForm" onsubmit="mostrarDatos(event)">
+<form id="pedidoForm" onsubmit="if(confirm('¿Seguro que quiere enviar este pedido?')){mostrarDatos(event)}">
     <label for="nombre">Nombre:</label>
     <input id="nombre" type="text" minlength="3" maxlength="50" required autocomplete="off"> <br> <br>
     <label for="plato">Plato:</label>
@@ -39,10 +39,10 @@
         <option value="Ensalada Caprese"></option>
     </datalist>
     <label for="cantidad">Cantidad:</label>
-    <input type="number" min="1" max="10" required autocomplete="off"> <br> <br>
+    <input id="cantidad" type="number" min="1" max="10" required autocomplete="off"> <br> <br>
     <label for="observaciones">Observaciones:</label> <br>
     <textarea id="observaciones"></textarea> <br> <br>
-    <button onclick="confirm() && mostrarDatos(event)">Enviar</button>
+    <input type="submit">
     <input type="reset">
 </form> <br> <br>
 <a href="index.html">Volver al inicio</a>
